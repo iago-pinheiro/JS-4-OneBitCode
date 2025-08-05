@@ -16,3 +16,44 @@ const mediaAritmeticaPonderada = (...numbers) => {
 
 // console.log(mediaAritmeticaPonderada({ n: 7, p: 2}, { n: 9, p: 5 }, { n: 3, p: 1 }))
 
+const mediana = (...numbers) => {
+  numbers.sort((a, b) => a - b)
+  const parOuImpar = numbers.length % 2
+  if(parOuImpar === 0){
+    const meioUm = (numbers.length / 2) - 1
+    const meioDois = numbers.length / 2
+    const media = (numbers[meioUm] + numbers[meioDois]) / 2
+    return media
+  } else{
+    const meio = (numbers.length - 1) / 2
+    return numbers[meio]
+  }
+}  
+
+// console.log(mediana(2, 4, 5, 7, 42, 99))
+// console.log(mediana(15, 14, 8, 7, 3))
+
+const moda = (...numbers) => {
+  const contador = {}
+  for (let numero of numbers) {
+    if (contador[numero]) {
+      contador[numero]++      
+    } else {
+      contador[numero] = 1  
+    }
+  }
+
+  let moda = 0 
+  let maiorContagem = 0
+  
+  for (let numero in contador){
+    if (contador[numero] > maiorContagem){
+      moda = numero
+      maiorContagem = contador[numero]
+    }
+  }
+
+  return moda
+}
+
+console.log(mediana(1, 1, 5, 4, 9, 7, 4, 3, 5, 2, 4, 0, 4))
