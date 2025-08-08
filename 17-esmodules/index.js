@@ -11,4 +11,4 @@ import { name, label, input, br } from "./functions.js"
 console.log(name)  // Usa a variável importada
 console.log(label({ for: 'fullname', textContent: 'Nome Completo' }))  // Usa função importada
 console.log(input({ id: 'fullname', name: 'fullname', placeholder: 'Digite seu nome completo...' }))
-console.log(br())  // Função que não precisa de parâmetros
+console.log(br())
