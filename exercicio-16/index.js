@@ -5,17 +5,20 @@
 // **Dica:** Para resolver o exercício tente procurar pelos métodos de adicionar um intervalo de tempo a uma data (add), calcular a diferença entre uma data e outra (diff) e exibir uma data em um formato específico (format).
 
 const dayjs = require("dayjs")
+const customParseFormat = require('dayjs/plugin/customParseFormat')
 
-const now = dayjs().format('DD/MM/YYYY')
+dayjs.extend(customParseFormat)
 
-function dateOfBirth(date){
-  date = dayjs().format('DD/MM/YYYY')
-  console.log(dayjs())
-  const currentAge =  dayjs().year() - dayjs(date).get('year')
-  const nextAnniversary = dayjs(date).add(1, 'year')
-  
-  const printExample = console.log('Idade atual: ' + currentAge + '\nPróxima data de aniversário: ' + nextAnniversary + '\nQuantos dias faltam para o próximo aniversário: ') 
-  // return printExample
+function dateOfBirth(dateString){
+  const birthDate = dayjs(dateString, 'DD/MM/YYYY')
+  const currentAge = dayjs().diff(birthDate, 'year')
+
+  const thisYearBirthday = birthDate.year(dayjs().year())
+  const nextAnniversary = thisYearBirthday.add(1, 'year')
+
+  const daysForTheNextBirthday = nextAnniversary.diff(dayjs(), 'days')
+
+  return console.log(`Idade no dia atual: ${currentAge}\nPróxima data de aniversário: ${nextAnniversary.format('DD/MM/YYYY')}\nQuantos dias para o próximo aniverśario: ${daysForTheNextBirthday}`)
 }
 
-dateOfBirth('14/02/2006')
+dateOfBirth('23/03/2007')
