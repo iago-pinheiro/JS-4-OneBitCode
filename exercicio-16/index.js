@@ -9,8 +9,8 @@ const customParseFormat = require('dayjs/plugin/customParseFormat')
 
 dayjs.extend(customParseFormat)
 
-function dateOfBirth(dateString){
-  const birthDate = dayjs(dateString, 'DD/MM/YYYY')
+function dateOfBirth(date){
+  const birthDate = dayjs(date, 'DD/MM/YYYY')
   const currentAge = dayjs().diff(birthDate, 'year')
 
   const thisYearBirthday = birthDate.year(dayjs().year())
