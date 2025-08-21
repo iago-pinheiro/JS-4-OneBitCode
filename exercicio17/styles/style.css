@@ -1,0 +1,156 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Título principal */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #e2e8f0;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Container principal */
+#numContainer {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-width: 300px;
+}
+
+/* Container do número */
+#numberCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Label */
+label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Input do número */
+#number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  background: #0f172a;
+  border: 2px solid #475569;
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  width: 150px;
+  transition: all 0.2s ease;
+}
+
+#number:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Container dos botões */
+#buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Botões */
+button {
+  font-size: 2rem;
+  font-weight: 600;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão de diminuir */
+#decrease {
+  background-color: #dc2626;
+  color: white;
+}
+
+#decrease:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+}
+
+#decrease:active {
+  transform: translateY(0);
+}
+
+/* Botão de aumentar */
+#increase {
+  background-color: #059669;
+  color: white;
+}
+
+#increase:hover {
+  background-color: #047857;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
+}
+
+#increase:active {
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  #numContainer {
+    padding: 2rem;
+    min-width: 250px;
+  }
+  
+  #number {
+    font-size: 2.5rem;
+    width: 120px;
+  }
+  
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
